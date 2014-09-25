@@ -15,6 +15,7 @@
             body {
                 background-color: #43ac6a;
             }
+
             /*
                         div {
                             border: thin solid khaki;
@@ -24,7 +25,7 @@
 
         <div class="large-11 medium-11 small-11 columns" ng-app>
 
-            <div class="large-12 medium-12 small-12 columns">
+            <div class="large-6 medium-6 small-12 columns">
 
                 <div class="large-12 medium-12 small-12 columns">
                     <em>A simple expression</em>
@@ -35,7 +36,18 @@
                 </div>
 
             </div>
-            
+
+            <div class="large-6 medium-6 small-12 columns" ng-init="ball={color:'orange',shape:'sphere'}">
+
+                <div class="large-12 medium-12 small-12 columns">
+                    <em>AngularJS objects are like Javascript objects</em>
+                </div>
+
+                <div class="large-12 medium-12 small-12 columns">
+                    The color of the ball is {{ ball.color}}.
+                </div>
+            </div>
+
             <div class="large-6 medium-6 small-12 columns" ng-init="name = 'Timmy'">
 
                 <div class="large-12 medium-12 small-12 columns">
@@ -47,7 +59,7 @@
                 </div>
 
                 <div class="large-12 medium-12 small-12 columns">
-                    Your name is <span ng-bind="name">.</span>
+                    Your name is <span ng-bind="name"></span>.
                 </div>
 
             </div>
@@ -121,7 +133,7 @@
                     Points Possible: <input type="text" ng-model="totalPointsPossible">
                 </div>
                 <div class="large-12 medium-12 small-12 columns">
-                    Your total is: {{pointsAcquired / totalPointsPossible}}.
+                    Your score is: <span ng-bind="pointsAcquired / totalPointsPossible"></span>.
                 </div>
             </div>
 
