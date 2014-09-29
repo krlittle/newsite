@@ -39,7 +39,7 @@ body {
   font-size: 100%; }
 
 body {
-  background: white;
+  background: #CCC;
   color: #222222;
   padding: 0;
   margin: 0;
@@ -99,6 +99,7 @@ select {
   width: 100%; }
 
 .row {
+  background: white;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -144,7 +145,7 @@ select {
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
   width: 100%;
-  float: left; }
+  float: left;}
 
 [class*="column"] + [class*="column"]:last-child {
   float: right; }
