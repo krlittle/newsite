@@ -49,22 +49,66 @@
 
         <div ng-app="">
 
-            <div class="row">
+            <div class="row" ng-controller="nameCountryController">
+                <div class="large-6 medium-6 columns">
+                    <hr/>  
+                    <em>Populating a list from an external controller:</em>
+                    <input type="text" ng-model="x.name">
+                </div>
+                <div class="columns">
+                    <ul class="disc">
+                        <li ng-repeat="x in nameCountry | filter: x.name | orderBy: 'country'">
+                            {{x.name + ' is from ' + x.country}}
+                        </li>
+                    </ul>
+                </div>                
+            </div>
 
+            <div class="row">
+                <div class="columns">
+                    <hr/>  
+                    <em>Populating a list from an external controller:</em>
+                </div>
                 <div class="columns" ng-controller="customersController"> 
+                    <input type="text" ng-model="x.Name">
                     <ul class="square">
-                        <li ng-repeat="x in names">
+                        <li ng-repeat="x in names | filter: x.Name | orderBy: 'Country'">
                             {{ x.Name + ', ' + x.Country}}
                         </li>
                     </ul>
                 </div>
-
             </div>
+
+            <div class="row" ng-controller="toAndFromJsonController">
+                <div class="columns">
+                    <hr/>  
+                    <em>Turning input into JSON and pulling from that JSON back to displayable objects:</em>
+                </div>
+                <div class="large-6 medium-6 columns">
+                    First Name: <input type="text" ng-model="user.firstName" />
+                </div>
+                <div class="large-6 medium-6 columns">
+                    Last Name: <input type="text" ng-model="user.lastName" />
+                </div>
+                <div class="columns">
+                    <button ng-click="showJson()">Object to JSON</button>
+                    <button ng-click="showObject()">JSON to Object</button>
+                </div>
+                <div class="columns">
+                    {{myJsonFromUser}}
+                </div>    
+                <div class="columns">
+                    {{myObjectFromJson.firstName + " " + myObjectFromJson.lastName}}
+                    <hr/>  
+                </div>
+            </div>
+
 
             <div class="row">
                 <div class="columns">
                     <button ng-click="count = count + 1">Click me!</button>
                     {{ count}}
+                    <hr/>  
                 </div>
             </div>
 
@@ -79,8 +123,8 @@
                 </div>
                 <div class="columns">
                     <a href="#" class="button [radius round]" ng-click="getChar()">Go!</a>
+                    <hr/>  
                 </div>
-
             </div>
 
         </div>
@@ -95,7 +139,6 @@
 
         <!-- AngularJS -->
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
-        <script src="js/charController.js"></script>
         <script>
 
                         function customersController($scope, $http) {
@@ -105,7 +148,25 @@
                                     });
                         }
 
+                        function toAndFromJsonController($scope) {
+
+                            $scope.user = {
+                                firstName: "Jay",
+                                lastName: "Swan"
+                            };
+
+                            $scope.showJson = function() {
+                                $scope.myJsonFromUser = angular.toJson($scope.user, true);
+                            }
+
+                            $scope.showObject = function() {
+                                $scope.myObjectFromJson = angular.fromJson($scope.myJsonFromUser)
+                            }
+                        }
+
         </script>
+        <script src="js/charController.js"></script>
+        <script src="js/nameCountryController.js"></script>
 
     </body>
 
