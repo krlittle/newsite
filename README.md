@@ -10,3 +10,11 @@ http://www.w3schools.com/angular/default.asp
 
 The documentation provided by Foundation on their site has been very helpful towards getting me up and running:
 http://foundation.zurb.com/
+
+1) clone the repository
+2) gradlew build
+3) java -jar build/libs/gs-rest-service-0.1.0.jar
+4) visit either:
+    http://localhost:8080/greeting?name=User.
+    or
+    http://localhost:8080/index.html
