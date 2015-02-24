@@ -1,0 +1,45 @@
+<div class="row">
+	<div class="columns">
+		<hr />
+		<em>Populating a list from an external controller:</em>
+	</div>
+	<div class="columns" ng-controller="customersController">
+		<input type="text" ng-model="x.Name">
+		<ul class="square">
+			<li ng-repeat="x in names | filter: x.Name | orderBy: 'Country'">
+				{{ x.Name + ', ' + x.Country}}</li>
+		</ul>
+	</div>
+</div>
+
+<div class="row" ng-controller="toAndFromJsonController">
+	<div class="columns">
+		<hr />
+		<em>Turning input into JSON and pulling from that JSON back to
+			displayable objects:</em>
+	</div>
+	<div class="large-6 medium-6 columns">
+		First Name: <input type="text" ng-model="user.firstName" />
+	</div>
+	<div class="large-6 medium-6 columns">
+		Last Name: <input type="text" ng-model="user.lastName" />
+	</div>
+	<div class="columns">
+		<button ng-click="showJson()">Object to JSON</button>
+		<button ng-click="showObject()">JSON to Object</button>
+	</div>
+	<div class="columns">{{myJsonFromUser}}</div>
+	<div class="columns">
+		{{myObjectFromJson.firstName + " " + myObjectFromJson.lastName}}
+		<hr />
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="columns">
+		<button ng-click="count = count + 1">Click me!</button>
+		{{count}}
+		<hr />
+	</div>
+</div>

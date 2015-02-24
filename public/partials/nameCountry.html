@@ -1,0 +1,14 @@
+<div class="row" ng-controller="nameCountryController">
+	<div class="large-6 medium-6 columns">
+		<hr />
+		<em>Populating a list from an external controller:</em> <input
+			type="text" ng-model="x.name">
+	</div>
+	<div class="columns">
+		<ul class="disc">
+			<li
+				ng-repeat="x in nameCountry | filter: x.name | orderBy: 'country'">
+				{{x.name + ' is from ' + x.country}}</li>
+		</ul>
+	</div>
+</div>

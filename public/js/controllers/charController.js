@@ -1,4 +1,4 @@
-function charController($scope, $http) {
+myApp.controller("CharController", ["$scope", "$http", function ($scope, $http) {
     $scope.char = {
         name: "Farmform",
         realm: "Illidan",
@@ -21,4 +21,4 @@ function charController($scope, $http) {
     };
     
     $scope.getChar();
-}
+}]);
