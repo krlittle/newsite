@@ -29,12 +29,14 @@
 	-->
 
 	<nav class="top-bar" data-topbar role="navigation">
+		<!-- Title Nav Section
 		<ul class="title-area">
 			<li class="name">
 				<h1>
-					<a href="#/">newsite</a>
+					<a href="#/"><img src="content/images/awesome_face.png" style="height: 10%; width: 10%"></a>
 				</h1>
 			</li>
+		-->
 			<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
 			<li class="toggle-topbar menu-icon"><a href="#/"><span>Menu</span></a></li>
 		</ul>
@@ -42,18 +44,21 @@
 		<section class="top-bar-section">
 			<!-- Right Nav Section -->
 			<ul class="right">
-				<li><a href="#/page2">Blizzard API</a></li>
 				<li class="has-dropdown"><a href="#/">Dropdown</a>
 					<ul class="dropdown">
-						<li class="active"><a href="#/">Home</a></li>
+						<li><a href="#/">Home</a></li>
 						<li><a href="#/page2">Blizzard API</a></li>
+						<li><a href="#/page3">Controllers</a></li>
+						<li><a href="#/page4">Javascript & JSON</a></li>
+						<li><a href="#/page5">Javascript & JSON</a></li>
 					</ul></li>
 			</ul>
 
-			<!-- Left Nav Section -->
+			<!-- Left Nav Section 
 			<ul class="left">
 				<li class="active"><a href="#/">Home</a></li>
 			</ul>
+			-->
 		</section>
 	</nav>
 
@@ -66,10 +71,7 @@
 
 	<!-- AngularJS -->
 	<script>
-	function personController($scope) {
-		$scope.firstName = "Jimmy";
-		$scope.lastName = "John";
-	}
+
 
 	function joeJonController($scope) {
 		$scope.joeJon = {

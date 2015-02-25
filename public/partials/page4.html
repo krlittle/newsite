@@ -1,0 +1,213 @@
+<div class="row">
+
+	<div class="large-3 medium-6 columns" ng-controller="">
+		<div class="columns">
+			<hr />
+			<em>Using a controller's properties to populate an expression</em>
+		</div>
+
+		<div class="large-6 columns">
+			First Name: <input type="text" ng-model="firstName">
+		</div>
+
+		<div class="large-6 columns">
+			Last Name: <input type="text" ng-model="lastName">
+		</div>
+
+		<div class="columns">
+			<blockquote>Name: {{firstName + " " + lastName}}</blockquote>
+		</div>
+	</div>
+
+	<div class="large-3 medium-6 columns" ng-controller="joeJonController">
+		<div class="columns">
+			<hr />
+			<em>Using a controller to populate an expression from an array</em>
+		</div>
+
+		<div class="large-6 columns">
+			First Name: <input type="text" ng-model="joeJon.firstName">
+		</div>
+
+		<div class="large-6 columns">
+			Last Name: <input type="text" ng-model="joeJon.lastName">
+		</div>
+
+		<div class="columns">
+			<blockquote>Name: {{joeJon.firstName + " " +
+				joeJon.lastName}}</blockquote>
+		</div>
+	</div>
+
+	<div class="large-3 medium-6 columns" ng-controller="maryLouController">
+		<div class="columns">
+			<hr />
+			<em>Using a function in a controller to populate an expression</em>
+		</div>
+
+		<div class="large-6 columns">
+			First Name: <input type="text" ng-model="maryLou.firstName">
+		</div>
+
+		<div class="large-6 columns">
+			Last Name: <input type="text" ng-model="maryLou.lastName">
+		</div>
+
+		<div class="columns">
+			<blockquote>Name: {{maryLou.fullName()}}</blockquote>
+		</div>
+	</div>
+
+	<div class="large-3 medium-6 columns"
+		ng-controller="jesseJamesController">
+		<div class="columns">
+			<hr />
+			<em>Using a method of a controller to populate an expression</em>
+		</div>
+
+		<div class="large-6 columns">
+			First Name: <input type="text" ng-model="jesseJames.firstName">
+		</div>
+
+		<div class="large-6 columns">
+			Last Name: <input type="text" ng-model="jesseJames.lastName">
+		</div>
+
+		<div class="columns">
+			<blockquote>Name: {{fullName()}}</blockquote>
+		</div>
+	</div>
+
+</div>
+
+<div class="row">
+
+	<div class="large-4 medium-4 columns" ng-controller="exController">
+
+		<div class="columns">
+			<hr />
+			<em>Accessing a controller and its properties in an external
+				file</em>
+		</div>
+
+		<div class="large-6 columns">
+			First Name: <input type="text" ng-model="ex.firstName">
+		</div>
+
+		<div class="large-6 columns">
+			Last Name: <input type="text" ng-model="ex.lastName">
+		</div>
+
+		<div class="columns">
+			<blockquote>Name: {{fullName()}}</blockquote>
+		</div>
+
+	</div>
+
+	<div class="large-4 medium-4 columns"
+		ng-init="alphaNum = ['one', 'two', 'three', 'four', 'five'];
+                        sub1 = 1">
+
+		<div class="columns">
+			<hr />
+			<em>Using a pointer to pull from an array</em>
+		</div>
+
+		<div class="columns">
+			Enter number 1 through 5: <input type="text" ng-model="sub1">
+		</div>
+		<div class="columns">
+			<blockquote>
+				The text for your number is "<span ng-bind="alphaNum[sub1 - 1]"></span>".
+			</blockquote>
+		</div>
+	</div>
+
+	<div class="large-4 medium-4 columns"
+		ng-init="food = ['apple', 'bananas', 'carrots', 'donuts'];
+                        subOne = 1">
+
+		<div class="columns">
+			<hr />
+			<em>Another use of a pointer to pull from an array</em>
+		</div>
+		<div class="columns">
+			Enter number 1 through 4: <input type="text" ng-model="subOne">
+		</div>
+		<div class="columns">
+			<blockquote>
+				Your number and your food is <strong>{{subOne + ' ' +
+					food[subOne - 1]}}</strong>.
+			</blockquote>
+		</div>
+	</div>
+
+</div>
+
+<div class="row">
+
+	<div class="large-3 medium-6 columns"
+		ng-init="names = ['Curly', 'Moe', 'Larry']">
+
+		<div class="columns">
+			<hr />
+			<em>Filtering a mixed case array to a lowercase list:</em>
+		</div>
+		<div class="columns">
+			<ul>
+				<li ng-repeat="x in names">{{x| lowercase}}</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="large-3 medium-6 columns"
+		ng-init="lowerCaseNumbers = ['one', 'two', 'three', 'four', 'five']">
+
+		<div class="columns">
+			<hr />
+			<em>Filtering a lowercase array to an uppercase list:</em>
+		</div>
+		<div class="columns">
+			<ul class="circle">
+				<li ng-repeat="x in lowerCaseNumbers">{{x| uppercase}}</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="large-3 medium-6 columns" ng-init="monies = [1, 2, 3, 4]">
+
+		<div class="columns">
+			<hr />
+			<em>Filtering an array of numbers to a currency list:</em>
+		</div>
+		<div class="columns">
+			<ul class="disc">
+				<li ng-repeat="x in monies">{{x| currency}}</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="large-3 medium-6 columns"
+		ng-controller="nameCountryController">
+
+		<div class="columns">
+			<hr />
+			<em>Populating a list from an external controller:</em>
+		</div>
+		<div class="columns">
+			<ul class="disc">
+				<li ng-repeat="x in nameCountry">{{x.name + ' is from ' +
+					x.country}}</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="row">
+	<div class="columns">
+		<hr />
+	</div>
+</div>
