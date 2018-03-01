@@ -1,6 +1,7 @@
-newsite
-=======
+# spring-and-foundation-web-app-example
 
+**Updated 2018-03-01:** Decided to do some "spring" cleaning in GitHub and thought this old project deserved some organization
+___
 This is my first effort towards learning AngularJS and Foundation 5.
 
 I chose to learn these together because Angular will provide me with content I can use to style with Foundation.
